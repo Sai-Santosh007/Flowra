@@ -1,0 +1,384 @@
+/* =====================================================
+   CHARACTER.CSS — Flowra Narrative Story Experience
+   Scenes · Character · Props · Animations
+   ===================================================== */
+
+/* ====================================================
+   SCENE STAGE — Full-screen fixed background layer
+   z-index: 1 — behind all page content (z-index: 2)
+   ==================================================== */
+
+#scene-stage {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.scene-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* ====================================================
+   STORY PANEL — Fixed right side
+   Character lives here. z-index: 5 — in front of content
+   ==================================================== */
+
+#story-panel {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 260px;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  overflow: visible;
+}
+
+#story-props {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+#char-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  width: 230px;
+  overflow: visible;
+  /* Subtle idle breathing — GSAP takes over expression changes */
+  animation: charBreathe 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+#char-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+@keyframes charBreathe {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-6px);  }
+}
+
+/* ====================================================
+   FLOATING PAPERS — Scene 1 (Chaos)
+   Fall diagonally from top of the story panel
+   ==================================================== */
+
+.story-paper {
+  position: absolute;
+  border-radius: 3px;
+  background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+  border: 1.5px solid rgba(108, 99, 255, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  /* Ruled lines on paper via multi-stop bg */
+  box-shadow:
+    inset 0 9px 0 rgba(108,99,255,0.06),
+    inset 0 16px 0 rgba(108,99,255,0.04),
+    inset 0 23px 0 rgba(108,99,255,0.04),
+    0 3px 10px rgba(0,0,0,0.25);
+}
+
+/* Six papers, each with different size, start-X, timing */
+.sp1 { width: 38px; height: 50px; left: 14px;  top: -60px; animation: paperFall 5.1s ease-in 0.0s infinite; }
+.sp2 { width: 30px; height: 40px; left: 68px;  top: -60px; animation: paperFall 6.4s ease-in 1.4s infinite; }
+.sp3 { width: 44px; height: 56px; left: 126px; top: -60px; animation: paperFall 4.7s ease-in 0.7s infinite; }
+.sp4 { width: 34px; height: 44px; left: 48px;  top: -60px; animation: paperFall 5.6s ease-in 2.3s infinite; }
+.sp5 { width: 26px; height: 34px; left: 96px;  top: -60px; animation: paperFall 7.1s ease-in 3.6s infinite; }
+.sp6 { width: 36px; height: 46px; left: 180px; top: -60px; animation: paperFall 5.9s ease-in 1.9s infinite; }
+
+@keyframes paperFall {
+  0%   { opacity: 0;   transform: translateY(0)      rotate(-8deg);  }
+  6%   { opacity: 0.9; }
+  88%  { opacity: 0.7; }
+  100% { opacity: 0;   transform: translateY(108vh)   rotate(430deg); }
+}
+
+/* ====================================================
+   SPARKLE DOTS — Scene 2 (Discovery)
+   ==================================================== */
+
+.sparkle-dot {
+  animation: sparklePulse 2.2s ease-in-out infinite;
+}
+
+.sparkle-dot:nth-child(2)  { animation-delay: 0.4s; }
+.sparkle-dot:nth-child(3)  { animation-delay: 0.8s; }
+.sparkle-dot:nth-child(4)  { animation-delay: 1.2s; }
+.sparkle-dot:nth-child(5)  { animation-delay: 1.6s; }
+.sparkle-dot:nth-child(6)  { animation-delay: 0.6s; }
+.sparkle-dot:nth-child(7)  { animation-delay: 1.0s; }
+
+@keyframes sparklePulse {
+  0%, 100% { transform: scale(0.1); opacity: 0;   }
+  40%       { transform: scale(1.6); opacity: 0.9; }
+  60%       { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* ====================================================
+   STEAM ANIMATION — Coffee cup
+   ==================================================== */
+
+#coffee-steam path {
+  animation: steamCurl 2.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+#coffee-steam path:nth-child(1) { animation-delay: 0.0s; }
+#coffee-steam path:nth-child(2) { animation-delay: 0.45s; }
+#coffee-steam path:nth-child(3) { animation-delay: 0.9s;  }
+
+@keyframes steamCurl {
+  0%   { transform: translateY(0)    scaleX(1.0); opacity: 0.75; }
+  55%  { transform: translateY(-12px) scaleX(1.35); opacity: 0.4;  }
+  100% { transform: translateY(-20px) scaleX(0.7);  opacity: 0;    }
+}
+
+/* ====================================================
+   CLOCK — Chaos scene spinning hands
+   ==================================================== */
+
+#chaos-clock-hour {
+  transform-origin: 70px 70px;
+  animation: clockSpinSlow 3.0s linear infinite;
+}
+
+#chaos-clock-minute {
+  transform-origin: 70px 70px;
+  animation: clockSpinFast 0.7s linear infinite;
+}
+
+@keyframes clockSpinSlow {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+@keyframes clockSpinFast {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* ====================================================
+   WALKING ANIMATION — Scene 3 (How it works)
+   CSS class applied via JS on char-wrapper
+   ==================================================== */
+
+.char-walking #char-leg-left {
+  animation: legL 0.52s ease-in-out infinite alternate;
+  transform-origin: 86px 292px;
+}
+
+.char-walking #char-leg-right {
+  animation: legR 0.52s ease-in-out infinite alternate;
+  transform-origin: 114px 292px;
+}
+
+.char-walking #char-arm-left {
+  animation: armL 0.52s ease-in-out infinite alternate;
+  transform-origin: 68px 182px;
+}
+
+.char-walking #char-arm-right {
+  animation: armR 0.52s ease-in-out infinite alternate;
+  transform-origin: 132px 182px;
+}
+
+@keyframes legL {
+  from { transform: rotate(-20deg); }
+  to   { transform: rotate(20deg);  }
+}
+@keyframes legR {
+  from { transform: rotate(20deg);  }
+  to   { transform: rotate(-20deg); }
+}
+@keyframes armL {
+  from { transform: rotate(20deg);  }
+  to   { transform: rotate(-20deg); }
+}
+@keyframes armR {
+  from { transform: rotate(-20deg); }
+  to   { transform: rotate(20deg);  }
+}
+
+/* ====================================================
+   LIGHT RAYS — Scene 3 (Clean workspace)
+   ==================================================== */
+
+.light-ray {
+  animation: rayBreath 5s ease-in-out infinite;
+}
+.light-ray:nth-child(2) { animation-delay: 1.2s; }
+.light-ray:nth-child(3) { animation-delay: 2.4s; }
+
+@keyframes rayBreath {
+  0%, 100% { opacity: 0.06; }
+  50%       { opacity: 0.16; }
+}
+
+/* ====================================================
+   PEOPLE WAVING — Scene 4 (Testimonials)
+   ==================================================== */
+
+.person-wave-arm {
+  transform-origin: 0px 0px;
+  animation: waveArm 1.6s ease-in-out infinite;
+}
+
+.person-wave-arm.d1 { animation-delay: 0.0s; }
+.person-wave-arm.d2 { animation-delay: 0.5s; }
+.person-wave-arm.d3 { animation-delay: 1.0s; }
+
+@keyframes waveArm {
+  0%, 100% { transform: rotate(0deg);   }
+  50%       { transform: rotate(-34deg); }
+}
+
+/* ====================================================
+   SIGNPOST — Scene 5 (Pricing)
+   ==================================================== */
+
+.sign-arm {
+  animation: signBob 2.2s ease-in-out infinite;
+}
+
+.sign-arm:nth-child(2) { animation-delay: 0.35s; }
+.sign-arm:nth-child(3) { animation-delay: 0.7s;  }
+
+@keyframes signBob {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-4px); }
+}
+
+/* ====================================================
+   LIGHTBULB — Character prop Scene 3 Step 2
+   ==================================================== */
+
+#char-lightbulb .bulb-glow {
+  animation: bulbPulse 1.3s ease-in-out infinite;
+}
+
+@keyframes bulbPulse {
+  0%, 100% { opacity: 0.18; transform: scale(1);    }
+  50%       { opacity: 0.45; transform: scale(1.18); }
+}
+
+/* ====================================================
+   ROCKET — Scene 6 (CTA)
+   ==================================================== */
+
+#story-rocket {
+  position: fixed;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0;
+  font-size: 2.4rem;
+  line-height: 1;
+  right: 130px;
+  bottom: 35vh;
+  filter: drop-shadow(0 0 14px rgba(245, 166, 35, 0.9));
+  will-change: transform, opacity;
+}
+
+@keyframes rocketLaunch {
+  0%   { transform: translateY(0)     scale(1)   rotate(0deg);  opacity: 1; }
+  15%  { transform: translateY(-40px) scale(1.1) rotate(-8deg); opacity: 1; }
+  78%  { opacity: 1; }
+  100% { transform: translateY(-82vh) scale(0.35) rotate(12deg); opacity: 0; }
+}
+
+/* ====================================================
+   CONFETTI PIECES — Generated by JS
+   ==================================================== */
+
+.confetti-js {
+  position: fixed;
+  pointer-events: none;
+  z-index: 6;
+  border-radius: 2px;
+  will-change: transform, opacity;
+}
+
+/* ====================================================
+   SCENE-SPECIFIC BACKGROUND GLOWS
+   ==================================================== */
+
+/* Scene 2 discovery: warm glow starts on right */
+#scene2-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 85% 50%, rgba(245,166,35,0.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* Scene 3 clean: bright warm light from right-center */
+#scene3-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 40%, rgba(245,166,35,0.09) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* Scene 6 resolution: warm cozy glow */
+#scene6-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 78% 60%, rgba(245,166,35,0.12) 0%, rgba(108,99,255,0.05) 40%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ====================================================
+   RESPONSIVE BREAKPOINTS
+   ==================================================== */
+
+@media (max-width: 1300px) {
+  #story-panel  { width: 220px; }
+  #char-wrapper { width: 196px; }
+}
+
+@media (max-width: 1100px) {
+  #story-panel  { width: 175px; }
+  #char-wrapper { width: 158px; }
+}
+
+@media (max-width: 960px) {
+  /* Tablet: simplified — only head + shoulders visible */
+  #story-panel {
+    width: 105px;
+    z-index: 4;
+  }
+  #char-wrapper {
+    width: 94px;
+    right: 4px;
+  }
+  /* Clip character to head + upper body only */
+  #char-svg {
+    height: 170px;
+    overflow: hidden;
+  }
+  /* Hide heavy scene background SVGs on tablet */
+  #scene1-bg .scene-svg,
+  #scene3-bg .scene-svg,
+  #scene4-bg .scene-svg,
+  #scene5-bg .scene-svg { display: none; }
+  .story-paper { display: none; }
+}
+
+@media (max-width: 600px) {
+  /* Mobile: hide story layer entirely, not worth the real estate */
+  #story-panel  { display: none; }
+  #scene-stage  { display: none; }
+  #story-rocket { display: none; }
+}

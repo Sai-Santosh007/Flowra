@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowra — Think Less, Do More | AI Productivity Platform</title>
+  <meta name="description"
+    content="Flowra is the AI-powered productivity platform that eliminates cognitive overhead so your team can focus on work that matters. Join 10,000+ teams already flowing." />
+  <!-- Google Fonts: Inter body + Plus Jakarta Sans as premium heading fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- Fontshare: Cabinet Grotesk (actual premium font) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Flowra</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features" id="nav-features">Features</a></li>
+        <li><a href="#how-it-works" id="nav-how">How it works</a></li>
+        <li><a href="#testimonials" id="nav-testimonials">Testimonials</a></li>
+        <li><a href="#pricing" id="nav-pricing">Pricing</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#" class="btn-ghost" id="nav-login-btn">Log in</a>
+        <a href="#pricing" class="btn-primary" id="nav-cta-btn">Get started free</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-glow glow-indigo"></div>
+      <div class="hero-glow glow-blue"></div>
+      <!-- Breathing purple glow behind headline -->
+      <div class="hero-glow-pulse" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          AI-Powered · Now in Open Beta
+        </div>
+
+        <h1 class="hero-headline" id="hero-headline" aria-label="Think Less, Do More.">
+          <span class="headline-line">
+            <span class="hw">Think</span>
+            <span class="hw">Less,</span>
+          </span>
+          <span class="headline-line">
+            <span class="hw gradient-text-warm">Do More.</span>
+          </span>
+        </h1>
+
+        <p class="hero-sub">
+          Flowra is the AI productivity layer that reads your workflow, eliminates the noise, and keeps your team in a
+          state of pure momentum — every single day.
+        </p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn-primary btn-lg" id="hero-cta-primary">
+            <span>Start for free</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn-ghost btn-lg" id="hero-cta-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polygon points="10,8 16,12 10,16" />
+            </svg>
+            <span>See how it works</span>
+          </a>
+        </div>
+        <p class="hero-note">No credit card required · Free forever plan</p>
+      </div>
+
+      <!-- 3D FLOATING DASHBOARD MOCKUP -->
+      <div class="hero-mockup" id="hero-mockup">
+        <div class="mockup-wrapper">
+          <!-- Animated gradient border ring -->
+          <div class="mockup-border-ring"></div>
+
+          <div class="mockup-screen" id="mockup-screen">
+
+            <!-- Title bar -->
+            <div class="mock-titlebar">
+              <div class="mock-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="mock-url">app.flowra.io/dashboard</div>
+              <div class="mock-icons"><span>⋯</span></div>
+            </div>
+
+            <!-- Sidebar + Main -->
+            <div class="mock-body">
+              <div class="mock-sidebar">
+                <div class="mock-sidebar-logo">⚡ Flowra</div>
+                <nav class="mock-nav">
+                  <div class="mock-nav-item active"><span class="nav-icon">▦</span> Dashboard</div>
+                  <div class="mock-nav-item"><span class="nav-icon">◈</span> Projects</div>
+                  <div class="mock-nav-item"><span class="nav-icon">◉</span> Focus</div>
+                  <div class="mock-nav-item"><span class="nav-icon">◎</span> Analytics</div>
+                  <div class="mock-nav-item"><span class="nav-icon">◫</span> Team</div>
+                </nav>
+                <div class="mock-sidebar-footer">
+                  <div class="mock-avatar-row">
+                    <div class="mock-avatar"></div>
+                    <div>
+                      <div style="font-size:7px;color:#e2e8f0;font-weight:600;">Alex R.</div>
+                      <div style="font-size:6px;color:#7c8db5;">Pro Plan</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mock-main">
+                <div class="mock-header-row">
+                  <div>
+                    <div class="mock-greeting">Good morning, Alex 👋</div>
+                    <div class="mock-subtext">Here's your flow report for today</div>
+                  </div>
+                  <div class="mock-date-chip">April 20, 2026</div>
+                </div>
+                <div class="mock-stats-row">
+                  <div class="mock-stat-card">
+                    <div class="stat-label">Focus Score</div>
+                    <div class="stat-value indigo">94%</div>
+                    <div class="stat-delta up">↑ 12%</div>
+                  </div>
+                  <div class="mock-stat-card">
+                    <div class="stat-label">Tasks Done</div>
+                    <div class="stat-value gold">28</div>
+                    <div class="stat-delta up">↑ 5</div>
+                  </div>
+                  <div class="mock-stat-card">
+                    <div class="stat-label">Time Saved</div>
+                    <div class="stat-value">3.2h</div>
+                    <div class="stat-delta up">↑ 0.8h</div>
+                  </div>
+                </div>
+                <div class="mock-chart-area">
+                  <div class="mock-chart-label">Weekly Productivity</div>
+                  <div class="mock-chart">
+                    <div class="mock-bar" style="height:55%"></div>
+                    <div class="mock-bar" style="height:70%"></div>
+                    <div class="mock-bar" style="height:45%"></div>
+                    <div class="mock-bar" style="height:80%"></div>
+                    <div class="mock-bar" style="height:65%"></div>
+                    <div class="mock-bar active" style="height:94%"></div>
+                    <div class="mock-bar" style="height:30%;opacity:0.3;"></div>
+                  </div>
+                  <div class="mock-chart-days">
+                    <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                  </div>
+                </div>
+                <div class="mock-task-label">AI Prioritized Tasks</div>
+                <div class="mock-task-list">
+                  <div class="mock-task done">
+                    <span class="task-check done">✓</span>
+                    <span>Review Q2 roadmap</span>
+                    <span class="task-tag indigo-tag">High</span>
+                  </div>
+                  <div class="mock-task done">
+                    <span class="task-check done">✓</span>
+                    <span>Update API documentation</span>
+                    <span class="task-tag gold-tag">Medium</span>
+                  </div>
+                  <div class="mock-task">
+                    <span class="task-check"></span>
+                    <span>Onboarding call — Nexlify</span>
+                    <span class="task-tag indigo-tag">High</span>
+                  </div>
+                  <div class="mock-task">
+                    <span class="task-check"></span>
+                    <span>Design sprint retro</span>
+                    <span class="task-tag">Low</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating elements -->
+          <div class="mockup-float float-1">
+            <div class="float-icon">🧠</div>
+            <div class="float-text">
+              <strong>AI Focus Mode</strong>
+              <span>3 tasks auto-prioritised</span>
+            </div>
+          </div>
+          <div class="mockup-float float-2">
+            <div class="float-icon">⚡</div>
+            <div class="float-text">
+              <strong>Flow Score: 94</strong>
+              <span>Your best day ever!</span>
+            </div>
+          </div>
+          <div class="mockup-float float-3">
+            <div class="float-icon">📈</div>
+            <div class="float-text">
+              <strong>+3.2h Saved</strong>
+              <span>This week</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF BAR ========== -->
+    <section class="social-proof" id="social-proof">
+      <div class="container">
+        <p class="proof-label">Trusted by forward-thinking teams at</p>
+        <div class="logos-strip">
+          <div class="logo-item" id="logo-nexlify">Nexlify</div>
+          <div class="logo-separator">·</div>
+          <div class="logo-item" id="logo-arcvault">ArcVault</div>
+          <div class="logo-separator">·</div>
+          <div class="logo-item" id="logo-luminos">Luminos</div>
+          <div class="logo-separator">·</div>
+          <div class="logo-item" id="logo-stridex">StrideX</div>
+          <div class="logo-separator">·</div>
+          <div class="logo-item" id="logo-prism">Prism AI</div>
+          <div class="logo-separator">·</div>
+          <div class="logo-item" id="logo-driftwork">Driftwork</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-label reveal-left">Features</div>
+        <h2 class="section-headline reveal">Everything your team needs<br /><span class="gradient-text-warm">to achieve
+            peak flow.</span></h2>
+        <p class="section-sub reveal">Flowra doesn't just manage tasks — it understands context, learns your patterns,
+          and orchestrates your entire workflow on autopilot.</p>
+        <div class="features-grid">
+
+          <div class="glass-card reveal-left">
+            <div class="card-icon-wrap indigo-glow">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <h3>AI Flow Engine</h3>
+            <p>Our proprietary AI analyses your work rhythm and dynamically schedules tasks to keep you in a state of
+              deep focus — no friction, no context-switching.</p>
+            <div class="card-tag">Automated</div>
+          </div>
+
+          <div class="glass-card reveal">
+            <div class="card-icon-wrap gold-glow">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg>
+            </div>
+            <h3>Smart Collaboration</h3>
+            <p>Real-time presence, async handoffs, and AI-summarised threads keep your entire team aligned without the
+              endless Slack pings and status meeting overhead.</p>
+            <div class="card-tag gold-tag">Team-first</div>
+          </div>
+
+          <div class="glass-card reveal-right">
+            <div class="card-icon-wrap indigo-glow">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <h3>Predictive Analytics</h3>
+            <p>Flowra surfaces bottlenecks before they happen, forecasts delivery risk with 89% accuracy, and generates
+              weekly insights so you lead data-first, always.</p>
+            <div class="card-tag">Intelligent</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-label reveal-left">How it works</div>
+        <h2 class="section-headline reveal">Three steps to<br /><span class="gradient-text-warm">total flow
+            state.</span></h2>
+        <div class="steps-wrapper">
+          <div class="steps-line" id="steps-line">
+            <div class="steps-line-fill" id="steps-line-fill"></div>
+          </div>
+          <div class="steps-grid">
+            <div class="step-card reveal-left" id="step-1">
+              <div class="step-number">01</div>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 5v14M5 12h14" />
+                  <rect x="3" y="3" width="18" height="18" rx="3" />
+                </svg>
+              </div>
+              <h3>Connect Your Tools</h3>
+              <p>One-click integrations with Notion, Linear, Slack, Jira, GitHub, and 60+ other apps. Flowra becomes the
+                brain above your stack in minutes.</p>
+            </div>
+            <div class="step-card reveal" id="step-2">
+              <div class="step-number">02</div>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+                </svg>
+              </div>
+              <h3>AI Learns Your Rhythm</h3>
+              <p>Flowra's engine observes how you work, when you're sharpest, and what drains energy — then builds a
+                personalised flow schedule unique to you.</p>
+            </div>
+            <div class="step-card reveal-right" id="step-3">
+              <div class="step-number">03</div>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <h3>Execute on Autopilot</h3>
+              <p>Wake up to a prioritised day, let AI handle the routing, get smart nudges at the right moments. You
+                focus on thinking — Flowra handles the rest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-label reveal-right">Testimonials</div>
+        <h2 class="section-headline reveal">Teams that flow<br /><span class="gradient-text-warm">together, win
+            together.</span></h2>
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card reveal-left" id="testimonial-1">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Flowra cut our weekly planning overhead by 70%. Our engineering team ships features two sprints
+              faster now. It's not just a tool — it's an unfair advantage."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg,#6C63FF,#4a42cc)">MK</div>
+              <div class="author-info">
+                <strong>Maya Kim</strong>
+                <span>VP of Engineering, Nexlify</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal featured" id="testimonial-2">
+            <div class="stars">★★★★★</div>
+            <blockquote>"I was drowning in Notion pages and Linear tickets. Flowra connected everything and now I open
+              one screen every morning. That peace of mind alone is worth 10x the price."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg,#F5A623,#c97d00)">JS</div>
+              <div class="author-info">
+                <strong>James Sullivan</strong>
+                <span>Founder &amp; CEO, StrideX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal-right" id="testimonial-3">
+            <div class="stars">★★★★★</div>
+            <blockquote>"The predictive analytics alone changed how I run product reviews. Flowra flagged an at-risk
+              launch 11 days before it would've slipped — saves us every quarter."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg,#6C63FF,#F5A623)">PN</div>
+              <div class="author-info">
+                <strong>Priya Nair</strong>
+                <span>Head of Product, Luminos</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-label reveal-left">Pricing</div>
+        <h2 class="section-headline reveal">Start free,<br /><span class="gradient-text-warm">scale as you flow.</span>
+        </h2>
+        <p class="section-sub reveal">No hidden fees. No enterprise sales calls. Transparent pricing that grows with
+          your team.</p>
+
+        <div class="pricing-toggle reveal">
+          <span class="toggle-label">Monthly</span>
+          <label class="toggle-switch" id="billing-toggle-label">
+            <input type="checkbox" id="billing-toggle" />
+            <span class="toggle-track"></span>
+          </label>
+          <span class="toggle-label">Annual <span class="save-badge">Save 30%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+
+          <div class="pricing-card reveal-left" id="pricing-starter">
+            <div class="pricing-plan-name">Starter</div>
+            <div class="pricing-price-wrap">
+              <span class="price-currency">$</span>
+              <span class="price-amount" data-monthly="0" data-annual="0">0</span>
+              <span class="price-period">/mo</span>
+            </div>
+            <p class="pricing-desc">Perfect for solo makers and freelancers exploring flow.</p>
+            <ul class="pricing-features">
+              <li><span class="check indigo">✓</span> Up to 3 projects</li>
+              <li><span class="check indigo">✓</span> AI task prioritisation (5/day)</li>
+              <li><span class="check indigo">✓</span> 10 integrations</li>
+              <li><span class="check indigo">✓</span> Basic analytics</li>
+              <li class="dim"><span class="check">–</span> Team collaboration</li>
+              <li class="dim"><span class="check">–</span> Predictive insights</li>
+            </ul>
+            <a href="#" class="btn-ghost btn-full" id="pricing-starter-cta">Get started free</a>
+          </div>
+
+          <div class="pricing-card popular reveal" id="pricing-pro">
+            <div class="pricing-plan-row">
+              <div class="pricing-plan-name">Pro</div>
+              <div class="popular-badge">Most Popular</div>
+            </div>
+            <div class="pricing-price-wrap">
+              <span class="price-currency">$</span>
+              <span class="price-amount" data-monthly="29" data-annual="20">29</span>
+              <span class="price-period">/mo per seat</span>
+            </div>
+            <p class="pricing-desc">For ambitious teams who need full AI-powered flow.</p>
+            <ul class="pricing-features">
+              <li><span class="check gold">✓</span> Unlimited projects</li>
+              <li><span class="check gold">✓</span> AI flow engine (unlimited)</li>
+              <li><span class="check gold">✓</span> 60+ integrations</li>
+              <li><span class="check gold">✓</span> Advanced analytics</li>
+              <li><span class="check gold">✓</span> Team collaboration</li>
+              <li><span class="check gold">✓</span> Predictive insights</li>
+            </ul>
+            <a href="#" class="btn-primary btn-full" id="pricing-pro-cta">Start 14-day trial</a>
+          </div>
+
+          <div class="pricing-card reveal-right" id="pricing-enterprise">
+            <div class="pricing-plan-name">Enterprise</div>
+            <div class="pricing-price-wrap">
+              <span class="price-currency price-currency--custom">Custom pricing</span>
+            </div>
+            <p class="pricing-desc">Dedicated infrastructure, SSO, custom AI models, and white-glove onboarding.</p>
+            <ul class="pricing-features">
+              <li><span class="check indigo">✓</span> Everything in Pro</li>
+              <li><span class="check indigo">✓</span> Custom AI model training</li>
+              <li><span class="check indigo">✓</span> SSO / SAML</li>
+              <li><span class="check indigo">✓</span> SLA guarantee</li>
+              <li><span class="check indigo">✓</span> Dedicated success manager</li>
+              <li><span class="check indigo">✓</span> On-premise option</li>
+            </ul>
+            <a href="#" class="btn-ghost btn-full" id="pricing-enterprise-cta">Talk to sales</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="final-cta" id="final-cta">
+      <div class="cta-bg-glow"></div>
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div class="cta-badge">🚀 Join 10,000+ teams already flowing</div>
+          <h2 class="cta-headline">Your best work is<br /><span class="gradient-text-warm">waiting on the other
+              side.</span></h2>
+          <p class="cta-sub">Stop managing. Start flowing. Flowra is free to start — no credit card, no friction, no
+            excuses.</p>
+          <a href="#pricing" class="btn-primary btn-xl" id="final-cta-btn">
+            <span>Get Flowra free today</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo" id="footer-logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">Flowra</span>
+          </a>
+          <p class="footer-tagline">Think Less, Do More.<br />The AI productivity platform for modern teams.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" id="footer-twitter" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.737-8.847L1.254 2.25H8.08l4.258 5.628L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" id="footer-linkedin" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" id="footer-github" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#features" id="footer-features">Features</a></li>
+              <li><a href="#pricing" id="footer-pricing">Pricing</a></li>
+              <li><a href="#" id="footer-changelog">Changelog</a></li>
+              <li><a href="#" id="footer-roadmap">Roadmap</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#" id="footer-about">About</a></li>
+              <li><a href="#" id="footer-blog">Blog</a></li>
+              <li><a href="#" id="footer-careers">Careers</a></li>
+              <li><a href="#" id="footer-press">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#" id="footer-docs">Documentation</a></li>
+              <li><a href="#" id="footer-api">API Reference</a></li>
+              <li><a href="#" id="footer-status">Status</a></li>
+              <li><a href="#" id="footer-contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#" id="footer-privacy">Privacy Policy</a></li>
+              <li><a href="#" id="footer-terms">Terms of Service</a></li>
+              <li><a href="#" id="footer-cookies">Cookie Policy</a></li>
+              <li><a href="#" id="footer-security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Flowra, Inc. All rights reserved.</p>
+        <p>Built with ⚡ for teams that refuse to slow down.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- GSAP + ScrollTrigger — premium animation system -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+  <!-- Phase 1: Focus Field Cursor (desktop) / Tap Feedback (mobile) -->
+  <script src="cursor.js"></script>
+</body>
+
+</html>
