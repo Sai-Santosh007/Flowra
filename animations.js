@@ -83,18 +83,18 @@ function initHero() {
     .to([sub, actions, note], { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 }, '-=0.2')
     // Mockup entrance — scale + fade (parallel)
     .to(mockup,  { opacity: 1, scale: 1, duration: 1.0, ease: 'power2.out' }, 0.3)
-    // Float loop after entrance
+    // Float loop after entrance — reduced amplitude by 20% (8→6px)
     .call(() => {
       gsap.to(wrapper, {
-        y: -8, duration: 2, ease: 'sine.inOut', repeat: -1, yoyo: true,
+        y: -6, duration: 2.4, ease: 'sine.inOut', repeat: -1, yoyo: true,
       });
     })
-    // Primary CTA glow pulse
+    // Primary CTA glow pulse — toned down 20%
     .call(() => {
       gsap.fromTo('#hero-cta-primary',
-        { boxShadow: '0 4px 24px rgba(108,99,255,0.38)' },
-        { boxShadow: '0 6px 42px rgba(108,99,255,0.70), 0 0 22px rgba(245,166,35,0.28)',
-          duration: 1.6, ease: 'sine.inOut', repeat: -1, yoyo: true }
+        { boxShadow: '0 4px 20px rgba(108,99,255,0.30)' },
+        { boxShadow: '0 6px 36px rgba(108,99,255,0.55), 0 0 18px rgba(245,166,35,0.20)',
+          duration: 2.0, ease: 'sine.inOut', repeat: -1, yoyo: true }
       );
     });
 
@@ -366,16 +366,16 @@ function initCardInteraction(card, opts = {}) {
    9. SUBTLE PARALLAX
    ══════════════════════════════════════════════════════ */
 function initParallax() {
-  // Hero glow pulse drifts upward as page scrolls
+  // Hero glow pulse drifts — reduced 25% (80→60px)
   gsap.to('.hero-glow-pulse', {
-    y: 80, ease: 'none',
+    y: 60, ease: 'none',
     scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1.5 },
   });
 
-  // Hero background glows parallax
+  // Hero background glows — reduced ~25%
   gsap.utils.toArray('.hero-glow').forEach((glow, i) => {
     gsap.to(glow, {
-      y: i === 0 ? -28 : 22, ease: 'none',
+      y: i === 0 ? -22 : 17, ease: 'none',
       scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1 + i * 0.4 },
     });
   });

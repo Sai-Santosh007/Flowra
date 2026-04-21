@@ -36,9 +36,9 @@
     ringLerp:  0.28,   // medium — faster than before
     fieldLerp: 0.15,   // inertia feel, spec: 0.12-0.18
     focusR:    260,    // spotlight radius in px
-    overlayDim: 0.18,  // max dimming outside focus (0–1)
+    overlayDim: 0.13,  // dimming reduced ~25% from 0.18 — less aggressive
     speedScale: 0.04,  // ring opacity boost per px/frame of speed
-    speedCap:   0.30,  // max additional ring opacity from speed
+    speedCap:   0.22,  // max extra ring opacity (was 0.30 — toned down)
   };
 
   /* ═══════════════════════════════════════════════════
@@ -306,9 +306,9 @@
     prevFx = fx; prevFy = fy;
 
     // Boost ring border opacity slightly when moving fast
-    // (subtle, capped — avoids jitter)
+    // subtle, capped lower — avoids visual noise
     const speedBoost = clamp(speed * CFG.speedScale, 0, CFG.speedCap);
-    const ringOpacity = clamp(0.50 + speedBoost, 0.50, 0.80);
+    const ringOpacity = clamp(0.42 + speedBoost, 0.42, 0.70);
     ring.style.borderColor = `rgba(108, 99, 255, ${ringOpacity})`;
 
     // ── Apply GPU-composited transforms ───────────

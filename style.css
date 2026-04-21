@@ -3,6 +3,12 @@
    Redesigned: Indigo/Gold · Cabinet Grotesk · Deep Space
    ===================================================== */
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Gradient on a .hw word that is ALSO gradient-text-warm — direct on same element */
 .hw.gradient-text-warm {
   background: linear-gradient(90deg, #F5A623 0%, #FFD166 50%, #ff9f00 100%);
@@ -44,9 +50,9 @@
   --card-bg: rgba(12, 12, 26, 0.6);
   --glass-border: rgba(108, 99, 255, 0.18);
 
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #475569;
+  --text-primary: #f4f6fa;          /* slightly brighter for clarity */
+  --text-secondary: #a0aec0;        /* lifted from 94a3b8 for better contrast */
+  --text-muted: #64748b;            /* lifted slightly for readability */
 
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Cabinet Grotesk', 'Plus Jakarta Sans', 'Inter', sans-serif;
@@ -65,12 +71,17 @@ body {
   font-family: var(--font-body);
   background: var(--space);
   color: var(--text-primary);
-  overflow-x: clip;
-  /* clip not hidden — prevents x overflow without blocking y animations */
+  overflow-x: hidden;
   line-height: 1.6;
   /* Global text overflow safety */
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+img,
+picture img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* -------- SCROLLBAR -------- */
@@ -108,7 +119,8 @@ body {
 .orb-1 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(108, 99, 255, 0.17) 0%, transparent 70%);
+  /* ~25% less intense than before */
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.13) 0%, transparent 70%);
   top: -250px;
   left: -200px;
 }
@@ -116,7 +128,7 @@ body {
 .orb-2 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(50, 100, 255, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(50, 100, 255, 0.10) 0%, transparent 70%);
   top: 10vh;
   right: -150px;
 }
@@ -124,7 +136,7 @@ body {
 .orb-3 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.05) 0%, transparent 70%);
   bottom: -100px;
   left: 30%;
 }
@@ -151,16 +163,13 @@ body {
    ==================================================== */
 
 @keyframes heroPulse {
-
-  0%,
-  100% {
-    opacity: 0.12;
+  0%, 100% {
+    opacity: 0.09;   /* reduced ~25% from 0.12 */
     transform: translate(-50%, -50%) scale(1);
   }
-
   50% {
-    opacity: 0.22;
-    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.17;   /* reduced ~25% from 0.22 */
+    transform: translate(-50%, -50%) scale(1.08);
   }
 }
 
@@ -446,15 +455,17 @@ body {
 }
 
 .btn-lg {
-  padding: 15px 30px;
+  padding: 16px 34px;   /* slightly larger for prominence */
   font-size: 1rem;
   border-radius: 8px;
 }
 
 .btn-xl {
-  padding: 18px 40px;
-  font-size: 1.1rem;
-  border-radius: 8px;
+  padding: 20px 46px;   /* larger and more commanding */
+  font-size: 1.15rem;
+  border-radius: 10px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
 .btn-full {
@@ -587,6 +598,9 @@ body {
 
 .mockup-wrapper {
   position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
   /* Perspective is on .hero (ancestor), not here — keep wrapper flat for correct tilt */
   transform-style: preserve-3d;
   will-change: transform;
@@ -609,7 +623,7 @@ body {
 }
 
 .mockup-screen {
-  width: 520px;
+  width: min(520px, 100%);
   background: #07080f;
   border-radius: 14px;
   border: 1px solid rgba(108, 99, 255, 0.2);
@@ -1634,6 +1648,16 @@ input:checked+.toggle-track::before {
   line-height: 1.2;
 }
 
+/* Trust line below pricing grid */
+.pricing-trust {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 28px;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
 /* ====================================================
    FINAL CTA
    ==================================================== */
@@ -1813,7 +1837,7 @@ input:checked+.toggle-track::before {
   }
 
   .mockup-screen {
-    width: 450px;
+    width: min(450px, 100%);
   }
 
   .float-2 {
@@ -1864,6 +1888,7 @@ input:checked+.toggle-track::before {
     text-align: center;
     padding: 120px 6% 60px;
     gap: 70px;
+    overflow: hidden;
   }
 
   .hero-sub {
@@ -1879,7 +1904,7 @@ input:checked+.toggle-track::before {
   }
 
   .mockup-screen {
-    width: 420px;
+    width: min(420px, 100%);
   }
 
   .float-2 {
@@ -1958,6 +1983,10 @@ input:checked+.toggle-track::before {
 
   .nav-cta {
     display: none;
+  }
+
+  .testimonials {
+    overflow: hidden;
   }
 }
 
